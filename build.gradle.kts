@@ -14,6 +14,7 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("com.fazecast:jSerialComm:2.11.0")
+    implementation("team.unnamed:inject:2.0.1")
 }
 
 tasks.test {
@@ -47,4 +48,5 @@ tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
 
     relocate("com.fazecast", "es.xism4.software.libs")
     relocate("org.junit", "es.xism4.software.libs")
+    relocate("team.unnamed", "es.xism4.software.libs")
 }

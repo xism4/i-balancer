@@ -2,17 +2,19 @@ package es.xism4.software.data;
 
 import com.fazecast.jSerialComm.SerialPort;
 import es.xism4.software.manager.BatteryManager;
+import team.unnamed.inject.Inject;
 
 import java.util.Scanner;
 
 public class Receiver {
-    private final SerialPort serialPort;
-    private final BatteryManager batteryManager;
 
-    public Receiver(String portName, BatteryManager batteryManager) {
+    private final SerialPort serialPort;
+
+    @Inject private BatteryManager batteryManager;
+
+    public Receiver(String portName) {
         this.serialPort = SerialPort.getCommPort(portName);
-        this.serialPort.setBaudRate(9600); //todo check config of ESP32
-        this.batteryManager = batteryManager;
+        this.serialPort.setBaudRate(9600);
     }
 
     public void startReceivingData() {

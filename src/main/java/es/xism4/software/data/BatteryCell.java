@@ -1,6 +1,7 @@
 package es.xism4.software.data;
 
 public class BatteryCell {
+
     private double voltage;
     private double temperature;
 
